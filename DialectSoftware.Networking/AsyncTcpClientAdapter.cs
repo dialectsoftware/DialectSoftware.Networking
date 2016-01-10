@@ -5,6 +5,13 @@ using System.Net.Sockets;
 using System.Runtime.Remoting;
 using System.Runtime.Remoting.Messaging;
 
+/// ******************************************************************************************************************
+/// * Copyright (c) 2011 Dialect Software LLC                                                                        *
+/// * This software is distributed under the terms of the Apache License http://www.apache.org/licenses/LICENSE-2.0  *
+/// *                                                                                                                *
+/// ******************************************************************************************************************
+
+
 namespace DialectSoftware.Networking
 {
 	/// <summary>
@@ -110,12 +117,7 @@ namespace DialectSoftware.Networking
 			this.monitor.Change(System.Threading.Timeout.Infinite,System.Threading.Timeout.Infinite); 
 			try
 			{
-				//if((int)((System.Net.Sockets.Socket)this.socket.GetType().GetField("m_ClientSocket",System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic).GetValue(this.socket)).Handle==-1)
-				//{
-				//	throw new System.InvalidOperationException("Operation not allowed on non-connected sockets.");
-				//}
-
-                Int32 length = this.socket.GetStream().EndRead(result);
+			    Int32 length = this.socket.GetStream().EndRead(result);
 				this.buffer.Write(this._buffer,0,length);
 				this.buffer.Flush(); 
 				this.Clear(this._buffer); 
@@ -169,11 +171,6 @@ namespace DialectSoftware.Networking
 			this.monitor.Change(System.Threading.Timeout.Infinite,System.Threading.Timeout.Infinite); 
 			try
 			{
-				//if((int)((System.Net.Sockets.Socket)this.socket.GetType().GetField("m_ClientSocket",System.Reflection.BindingFlags.Instance|System.Reflection.BindingFlags.NonPublic).GetValue(this.socket)).Handle==-1)
-				//{
-				//	throw new System.InvalidOperationException("Operation not allowed on non-connected sockets.");
-				//}
-
 				this.socket.GetStream().EndWrite(result); 
 				if(this.buffer.Position != this.buffer.Length)
 				{

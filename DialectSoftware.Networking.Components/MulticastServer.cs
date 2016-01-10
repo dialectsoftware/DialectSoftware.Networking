@@ -4,6 +4,12 @@ using System.Text;
 using System.Net.Sockets;
 using System.Collections.Generic;
 
+/// ******************************************************************************************************************
+/// * Copyright (c) 2011 Dialect Software LLC                                                                        *
+/// * This software is distributed under the terms of the Apache License http://www.apache.org/licenses/LICENSE-2.0  *
+/// *                                                                                                                *
+/// ******************************************************************************************************************
+
 namespace DialectSoftware.Networking
 {
     public class MulticastServer
@@ -107,9 +113,6 @@ namespace DialectSoftware.Networking
             {
                 object[] args = { result };
                 ((System.Runtime.Remoting.Messaging.AsyncResult)result).AsyncDelegate.GetType().GetMethod("EndInvoke").Invoke(((System.Runtime.Remoting.Messaging.AsyncResult)result).AsyncDelegate, args);
-                //IDisposable disposer = ((System.Runtime.Remoting.Messaging.AsyncResult)result).AsyncState as IDisposable;
-                //if (disposer != null)
-                //    disposer.Dispose();
             }
 
             public void Send(AsyncNetworkAdapter state, byte[] data)

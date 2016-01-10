@@ -5,6 +5,12 @@ using System.Text;
 using System.Net.Sockets;
 using System.Net;
 
+/// ******************************************************************************************************************
+/// * Copyright (c) 2011 Dialect Software LLC                                                                        *
+/// * This software is distributed under the terms of the Apache License http://www.apache.org/licenses/LICENSE-2.0  *
+/// *                                                                                                                *
+/// ******************************************************************************************************************
+
 namespace DialectSoftware.Networking
 {
     public class MulticastClient
@@ -47,17 +53,7 @@ namespace DialectSoftware.Networking
 
             public MulticastClient()
 			{
-                //// Create a multicast socket.
-                //_socket = new Socket(AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
-                
-                ////Allow multiple
-                //_socket.SetSocketOption(SocketOptionLevel.Socket, SocketOptionName.ReuseAddress, true);
-
-                //// Get the local IP address used by the listener and the sender to
-                //IPEndPoint IPlocal = new IPEndPoint(IPAddress.Any, 0);
-
-                //// Bind this endpoint to the multicast socket.
-                //_socket.Bind(IPlocal);
+               
 			}
 			
 			public void Send(IPAddress ip, Int32 Port, byte[] data, Int32 timeOut)
